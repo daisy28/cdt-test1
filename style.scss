@@ -273,4 +273,8 @@ footer span {
   .navigation {
      display: flex;
   }
+
+  .menu_list_items p ion-icon {
+     transform: rotate(90deg);
+  }
 }
