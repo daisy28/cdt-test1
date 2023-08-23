@@ -36,8 +36,12 @@
   gap: 0.5rem;
 }
 
-.sub_menu {
-  display: none;
+.sub_menu_container {
+     display: none;
+}
+
+.sub_menu_container.toggle {
+     display: block;
 }
 
 .menu_text {
@@ -278,3 +282,5 @@ footer span {
      transform: rotate(90deg);
   }
 }
+
+
