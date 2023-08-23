@@ -1,3 +1,4 @@
+const nav = document.querySelector(".navigation");
 const menu = document.querySelector(".menu");
 const menuList = document.querySelector(".menu_list");
 const postCodeDiv = document.querySelector(".post_code_div");
@@ -13,28 +14,37 @@ menu.addEventListener("click", () => {
 
 const subMenuUI = (link1, link2, link3) => {
      return `
-          <a href="#" class="menu_list_items sub_menu_item">${link1}</a>
-          <a href="#" class="menu_list_items sub_menu_item">${link2}</a>
-          <a href="#" class="menu_list_items sub_menu_item">${link3}</a>`;
+          <a href="#" class="menu_list_items">${link1}</a>
+          <a href="#" class="menu_list_items">${link2}</a>
+          <a href="#" class="menu_list_items">${link3}</a>`;
 };
 
 toggles.forEach(toggle => {
      toggle.addEventListener("click", () => {
           backBtn.classList.toggle("show_menu");
           backBtn.classList.add("menu_list_items");
+          menuList.classList.toggle("show_menu");
+          
           if (toggle.classList.contains("help_menu_toggle")) {
-               menuList.innerHTML = subMenuUI("Help and Information", "About this Website", "Privacy Policy");
+               nav.innerHTML += subMenuUI("Help and Information", "About this Website", "Privacy Policy");
           } else if (toggle.classList.contains("pl_menu_toggle")) {
-               menuList.innerHTML = subMenuUI("Postcode Lists", "By County", "By Introduction Date");
+               nav.innerHTML += subMenuUI("Postcode Lists", "By County", "By Introduction Date");
           } else {
-               menuList.innerHTML = subMenuUI("Postcode Maps", "User Type", "Use Category", "Council Tax Band");
+               nav.innerHTML += subMenuUI("Postcode Maps", "User Type", "Use Category", "Council Tax Band");
           }
      });
 });
 
-backBtn.addEventListener("click", () => {
-     console.log("hy")
-})
+// nav.addEventListener("click", (e) => {
+//      const links = Array.from(nav.children);
+//      if (e.target.classList.contains("back_btn")) {
+//           links.forEach(link => {
+//                if (link.classList.contains("menu_list_items")) {
+//                     link.style.display = "none";
+//                }
+//           });
+//      }
+// });
 
 const updateUI = (item) => {
      return postCodeDiv.innerHTML += `<p class="post_codes">${item}</p>`;
@@ -43,3 +53,7 @@ const updateUI = (item) => {
 postCodes.map(postCode => {
      updateUI(postCode);
 });
+
+menuList.addEventListener("onmouseover", () => {
+
+})
