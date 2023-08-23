@@ -108,7 +108,7 @@ const ZUR0001347F2s = [
   "SA99 1AF",
 ];
 
-menu.addEventListener("click", (e) => {
+menu.addEventListener("click", () => {
   menuList.classList.toggle("show_menu");
 });
 

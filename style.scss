@@ -25,7 +25,8 @@
 
 .home a,
 .menu,
-.help_menu_toggle {
+.help_menu_toggle,
+.menu_list_items p ion-icon {
   cursor: pointer;
   color: white;
 }
@@ -280,6 +281,16 @@ footer span {
 
   .menu_list_items p ion-icon {
      transform: rotate(90deg);
+  }
+
+  .sub_menu_container {
+     position: absolute;
+     z-index: 40;
+     top: 85px;
+  }
+
+  .back_btn{
+     display: none;
   }
 }
 
