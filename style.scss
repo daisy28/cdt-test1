@@ -112,7 +112,7 @@ button {
 
 .main_heading {
   color: #222;
-  margin-bottom: 1rem;
+  margin: 1.5rem 0;
   font-size: 2rem;
   font-weight: 400;
 }
@@ -233,17 +233,19 @@ footer span {
     padding: 1rem 3.5rem;
   }
 
+  button {
+    width: 150px;
+  }
+
   button,
   .search_input {
     padding: 1rem 1.2rem;
   }
 
-  .menu_search_btn {
-    padding: 1.3rem;
-  }
-
-  .main_search_btn {
-    padding: 1.2rem 1.4rem;
+  .main_search_btn,
+  .menu_search_btn,
+  .search_ZUR0001347F2_div {
+    padding: 1.25rem 1.4rem;
   }
 
   .search_input {
@@ -281,17 +283,24 @@ footer span {
 
   .menu_list_items p ion-icon {
      transform: rotate(90deg);
+     margin-left: .3rem;
+     margin-top: .3rem;
   }
 
   .sub_menu_container {
      position: absolute;
      z-index: 40;
-     top: 85px;
+     top: 57px;
   }
 
-  .back_btn{
+  .back_btn {
      display: none;
   }
+
+  .menu_input_div {
+    display: none;
+  }
 }
+  
 
 

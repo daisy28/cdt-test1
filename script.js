@@ -1,11 +1,12 @@
 const nav = document.querySelector(".navigation");
 const menu = document.querySelector(".menu");
 const menuList = document.querySelector(".menu_list");
-const ZUR0001347F2Div = document.querySelector(".post_code_div");
+const menuListDiv = document.querySelector(".menu_list_items");
+const postCodeDiv = document.querySelector(".post_code_div");
 const toggles = document.querySelectorAll(".toggle");
 const subMenu = document.querySelector(".sub_menu_container");
 
-const ZUR0001347F2s = [
+const postCodes = [
   "SA99 1DU",
   "W1A 1AA",
   "SW1A 1AA",
@@ -128,20 +129,23 @@ toggles.forEach((toggle) => {
     menuList.classList.toggle("show_menu");
 
     if (toggle.classList.contains("help_menu_toggle")) {
+      subMenu.style.left = "60px";
       subMenu.innerHTML = subMenuUI(
         "Help and Information",
         "About this Website",
         "Privacy Policy"
       );
     } else if (toggle.classList.contains("pl_menu_toggle")) {
+      subMenu.style.left = "265px";
       subMenu.innerHTML = subMenuUI(
-        "ZUR0001347F2 Lists",
+        "ZUR047F2 Lists",
         "By County",
         "By Introduction Date"
       );
     } else {
+      subMenu.style.left = "430px";
       subMenu.innerHTML = subMenuUI(
-        "ZUR0001347F2 Maps",
+        "ZUR047F2 Maps",
         "User Type",
         "Use Category",
         "Council Tax Band"
@@ -158,11 +162,9 @@ subMenu.addEventListener("click", (e) => {
 });
 
 const updateUI = (item) => {
-  return (ZUR0001347F2Div.innerHTML += `<p class="post_codes">${item}</p>`);
+  return (postCodeDiv.innerHTML += `<p class="post_codes">${item}</p>`);
 };
 
-ZUR0001347F2s.map((ZUR0001347F2) => {
-  updateUI(ZUR0001347F2);
+postCodes.map((postcode) => {
+  updateUI(postcode);
 });
-
-menuList.addEventListener("onmouseover", () => {});
